@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-          scope: '@GIT-Package-Master'
+          scope: '@Pro-Developer-team'
       - run: echo "registry=https://npm.pkg.github.com/@Pro-Developer-team" >> .npmrc
       - run: npm install
       - run: npm ci
