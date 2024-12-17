@@ -1,8 +1,8 @@
 {
-  "name": "@git-package-master/npm-package-1",
+  "name": "@pro-developer-team/npm-package-1",
   "version": "1.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GIT-Package-Master/All-packages-in-one-repository-BETA-UNDER-DEVELOPMENT-.git"
+    "url": "https://github.com/Pro-Developer-team/Github-Packages.git"
   }
 }
