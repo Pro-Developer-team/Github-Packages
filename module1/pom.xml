@@ -12,7 +12,7 @@
 
     <artifactId>Maven-pkg-1</artifactId>
     <version>0.1.2</version>
-    <name>Maven-package-1</name>
+    <name>Maven-pkg-1</name>
     <description>A simple example project for dependency</description>
-    <url>https://github.com/GIT-Package-Master/Github-maven-Package-Examples</url>
+    <url>https://github.com/Pro-Developer-team/Github-Packages</url>
 </project>
