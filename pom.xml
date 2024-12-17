@@ -1,221 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<artifactId>maven-package-1</artifactId>
-	<groupId>com.custom</groupId>
-	<packaging>jar</packaging>
-	<version>1.0.5-SNAPSHOT</version>
+    <groupId>org.custom</groupId>
+    <artifactId>example-maven-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-	<name>Cuke Report Converter</name>
-	<description>A library that parses cucumber json report files and maps the
-		report to java objects. It also provides a conversion method that maps
-		those objects to a new structure ( cuke model )</description>
-	<url>https://github.com/GIT-Package-Master/All-packages-in-one-repository-BETA-UNDER-DEVELOPMENT-</url>
+    <modules>
+        <module>module1</module>
+        <module>module2</module>
+        <module>module3</module>
+        <!-- Add more modules as needed -->
+    </modules>
 
-	<licenses>
-		<license>
-			<name>The Apache Software License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-		</license>
-	</licenses>
-	
-	<properties>
-		<lombok.version>1.18.34</lombok.version>
-		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-		<maven-javadoc-plugin.verion>3.6.3</maven-javadoc-plugin.verion>
-		<maven-source-plugin.version>3.3.1</maven-source-plugin.version>
-		<build-helper-plugin.version>3.6.0</build-helper-plugin.version>
-		<jackson-annotations.version>2.17.2</jackson-annotations.version>
-		<junit.version>5.9.1</junit.version>
-		<assertj.version>3.26.3</assertj.version>
-		<slf4j.version>2.0.16</slf4j.version>
-		<logback.version>1.5.7</logback.version>
-		<commons-io.version>2.14.0</commons-io.version>
-		<commons-lang3.version>3.16.0</commons-lang3.version>
-		<gpg-plugin.version>3.2.2</gpg-plugin.version>
-		<central-publishing-maven-plugin.version>0.5.0</central-publishing-maven-plugin.version>
-	</properties>
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.codehaus.mojo</groupId>
-			<artifactId>build-helper-maven-plugin</artifactId>
-			<version>${build-helper-plugin.version}</version>
-			<type>maven-plugin</type>
-		</dependency>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/Pro-Developer-team/Maven-Packages</url>
+        </repository>
+    </distributionManagement>
 
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-annotations</artifactId>
-			<version>${jackson-annotations.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>${jackson-annotations.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-jsr310</artifactId>
-			<version>${jackson-annotations.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>${assertj.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-core</artifactId>
-			<version>${logback.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>${logback.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>${commons-io.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-lang3</artifactId>
-		    <version>${commons-lang3.version}</version>
-		</dependency>
-
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven-compiler-plugin.version}</version>
-				<configuration>
-					<release>17</release>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>${maven-source-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<phase>package</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${maven-javadoc-plugin.verion}</version>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<phase>package</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-		</plugins>
-	</build>
-
-	<scm>
-		<url>https://github.com/alexop-a/Cuke-Report-Converter.git</url>
-		<connection>scm:git:https://github.com/alexop-a/Cuke-Report-Converter.git</connection>
-		<developerConnection>scm:git:https://github.com/alexop-a/Cuke-Report-Converter.git</developerConnection>
-		<tag>v@{project.version}</tag>
-	</scm>
-
-	 <profiles>
-		<profile>
-			<id>github-maven-artifactory</id>
-			<distributionManagement>
-				<repository>
-					<id>github</id>
-					<name>GitHub alexop-a Apache Maven Packages</name>
-					<url>https://maven.pkg.github.com/alexop-a/Cuke-Report-Converter</url>
-				</repository>
-
-			</distributionManagement>
-
-		</profile>
-
-		<profile>
-			<id>central-maven-artifactory</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>${gpg-plugin.version}</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-						<configuration>
-							<gpgArguments>
-								<argument>--pinentry-mode</argument>
-								<argument>loopback</argument>
-							</gpgArguments>
-						</configuration>
-					</plugin>
-
-					<plugin>
-						<groupId>org.sonatype.central</groupId>
-						<artifactId>central-publishing-maven-plugin</artifactId>
-						<version>${central-publishing-maven-plugin.version}</version>
-						<extensions>true</extensions>
-						<configuration>
-							<publishingServerId>central</publishingServerId>
-						</configuration>
-					</plugin>
-
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version> <!-- Use the latest version -->
+            </plugin>
+        </plugins>
+    </build>
 </project>
