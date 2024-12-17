@@ -12,7 +12,7 @@
 
     <artifactId>maven-package-2</artifactId>
     <version>0.1.0</version>
-    <name>Maven-package-2</name>
+    <name>Maven-pkg-2</name>
     <description>Another example project for dependency</description>
     <url>https://github.com/GIT-Package-Master/Github-maven-Package-Examples</url>
 </project>
