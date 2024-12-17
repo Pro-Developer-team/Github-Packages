@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>maven-package-3</artifactId>
+    <artifactId>maven-pkg-3</artifactId>
     <version>0.1.0</version>
     <name>Maven-package-3</name>
     <description>A third example project for dependency</description>
