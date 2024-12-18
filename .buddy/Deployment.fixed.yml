@@ -9,6 +9,13 @@
   - action: "Build multi-arch Docker image"
     type: "DOCKER_BUILD_MULTI_ARCH"
     dockerfile_path: ""
+  - action: "Run Docker Container"
+    type: "RUN_DOCKER_CONTAINER"
+    docker_image_name: "docker/dockerfile"
+    docker_image_tag: "v1"
+    export_container_path: "/"
+    mount_filesystem_disable: true
+    volume_mappings: []
   - action: "Push Docker image"
     type: "DOCKER_PUSH"
     integration: "Docker_Hub"
