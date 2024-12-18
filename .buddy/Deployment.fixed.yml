@@ -22,6 +22,7 @@
     docker_image_tag: "version-number"
     docker_registry: "DOCKER_HUB"
     repository: "friendgamer99/example"
+    ignore_errors: true
   - action: "Build Docker image"
     type: "DOCKERFILE"
     context_path: "Buddy docker/"
