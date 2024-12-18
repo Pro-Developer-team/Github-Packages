@@ -16,6 +16,7 @@
     export_container_path: "/"
     mount_filesystem_disable: true
     volume_mappings: []
+    ignore_errors: true
   - action: "Push Docker image"
     type: "DOCKER_PUSH"
     integration: "Docker_Hub"
