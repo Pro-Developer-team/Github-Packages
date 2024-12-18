@@ -65,3 +65,4 @@
     - "-d '{\"title\":\"Add ruby-test.html\",\"head\":\"add-ruby-test-file\",\"base\":\"main\",\"body\":\"This is an example.\"}'"
     cached_dirs:
     - "/usr/local/bundle"
+    ignore_errors: true
