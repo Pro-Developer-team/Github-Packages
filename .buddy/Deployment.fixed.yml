@@ -1,0 +1,11 @@
+- pipeline: "Deployment"
+  events:
+  - type: "PUSH"
+    refs:
+    - "refs/heads/main"
+  fail_on_prepare_env_warning: true
+  resources: "X2LARGE"
+  actions:
+  - action: "Build multi-arch Docker image"
+    type: "DOCKER_BUILD_MULTI_ARCH"
+    dockerfile_path: ""
