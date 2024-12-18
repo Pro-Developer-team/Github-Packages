@@ -1,0 +1,38 @@
+version: 1.0
+
+# Define the pipeline
+pipelines:
+  - name: Build and Test
+    steps:
+      - name: Checkout
+        type: checkout
+        repository: Github-Packages
+        branch: main
+
+      - name: Install Dependencies
+        type: run
+        image: node:14
+        commands:
+          - npm install
+
+      - name: Run Tests
+        type: run
+        image: node:14
+        commands:
+          - npm test
+
+      - name: Build
+        type: run
+        image: node:14
+        commands:
+          - npm run build
+
+      - name: Deploy to GitHub
+        type: deploy
+        provider: github
+        configuration:
+          repository: pro-Developer-team/Github-Packages
+          branch: main
+          access_token: ${GITHUB_ACCESS_TOKEN}
+          source: ./
+          target: /
