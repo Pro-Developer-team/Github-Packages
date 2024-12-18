@@ -9,3 +9,8 @@
   - action: "Build multi-arch Docker image"
     type: "DOCKER_BUILD_MULTI_ARCH"
     dockerfile_path: ""
+  - action: "Build Docker image"
+    type: "DOCKERFILE"
+    context_path: "Buddy docker/"
+    do_not_prune_images: true
+    provenance: "MIN"
