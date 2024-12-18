@@ -28,3 +28,13 @@
     do_not_prune_images: true
     ignore_errors: true
     provenance: "MIN"
+  - action: "jekyll build"
+    type: "BUILD"
+    docker_image_name: "jekyll/jekyll"
+    docker_image_tag: "4.3.3"
+    execute_commands:
+    - "jekyll build"
+    volume_mappings:
+    - "/:/srv/jekyll"
+    ignore_errors: true
+    shell: "BASH"
